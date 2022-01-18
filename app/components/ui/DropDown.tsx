@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import styled from "styled-components/native";
 
 const DropDownContainer = styled.View`
@@ -53,14 +53,14 @@ const DropDown: FC<IDropDown> = ({ options, nameDropDown }) => {
   return (
     <DropDownContainer>
       <DropDownHeader onPress={toggling}>
-        {selectedOption || `${nameDropDown} ▼`}
+        <Text>{selectedOption || `${nameDropDown} ▼`}</Text>
       </DropDownHeader>
       {isOpen && (
         <DropDownListContainer>
           <DropDownList>
             {options.map((option) => (
               <ListItem onPress={onOptionClicked(option)} key={Math.random()}>
-                {option}
+                <Text>{option}</Text>
               </ListItem>
             ))}
           </DropDownList>
