@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";
+import DropDown from "../ui/DropDown";
 import Field from "../ui/Field";
 
 const ViewMain = styled.View`
@@ -21,12 +22,22 @@ const ViewMain = styled.View`
 
 const StartView: FC = () => {
   const [name, setName] = useState<string>("");
+  const options = ["Mangoes", "Apples", "Oranges"];
   return (
     <ViewMain>
       <Field
         val={name}
         placeholder='Enter Name'
         onChange={(val) => setName(val)}
+      />
+
+      <DropDown
+        nameDropDown='Enter the theme of the message'
+        options={options}
+      />
+      <DropDown
+        nameDropDown='Enter the subtheme of the message'
+        options={options}
       />
     </ViewMain>
   );
