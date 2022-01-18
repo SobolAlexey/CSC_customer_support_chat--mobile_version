@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";
+import Button from "../ui/Button";
 import DropDown from "../ui/DropDown";
 import Field from "../ui/Field";
 
@@ -23,6 +24,7 @@ const ViewMain = styled.View`
 const StartView: FC = () => {
   const [name, setName] = useState<string>("");
   const options = ["Mangoes", "Apples", "Oranges"];
+  const startDialogHandler = async () => {};
   return (
     <ViewMain>
       <Field
@@ -39,6 +41,7 @@ const StartView: FC = () => {
         nameDropDown='Enter the subtheme of the message'
         options={options}
       />
+      <Button title='Start Dialog' onPress={startDialogHandler} />
     </ViewMain>
   );
 };
