@@ -12,7 +12,7 @@ interface IField {
 const TextInputStyle = styled.TextInput`
   width: 100%;
   font-size: 1.2em;
-  height: 40px;
+  height: 50px;
   border: none;
   background: white;
   padding-left: 5px;

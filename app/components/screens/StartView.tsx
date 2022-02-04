@@ -6,30 +6,33 @@ import DropDown from "../ui/DropDown";
 import Field from "../ui/Field";
 
 const ViewMain = styled.View`
-  max-height: 100%;
-  height: 100%;
-  color: rgb(73, 73, 73);
-  margin-left: 20px;
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
+  background-color: rgb(242,242,242);
+  min-height: 100%;
+  min-width: 100%;
+  padding: 20px;
+`;
+const MarginView = styled.View`
+ height: 100%;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 90px;
-  padding-top: 190px;
+  padding-top: 90px;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #52595e;
+  
 `;
 
 const StartView: FC = () => {
   const [name, setName] = useState<string>("");
-  const options = ["Mangoes", "Apples", "Oranges", "Mangoes", "Apples", "Oranges"];
+  const options = ["Mangoes", "Apples", "Oranges","Mangoes", "Apples",  "Oranges", "Mangoes", "Apples", "Oranges","Mangoes", "Apples",  "Oranges"];
   const startDialogHandler = async () => {};
   return (
     <ViewMain>
+      <MarginView>
       <Field
         val={name}
-        placeholder='Enter Name'
+        placeholder='Enter Your Name'
         onChange={(val) => setName(val)}
       />
 
@@ -42,6 +45,7 @@ const StartView: FC = () => {
         options={options}
       />
       <Button title='Start Dialog' onPress={startDialogHandler} />
+      </MarginView>
     </ViewMain>
   );
 };

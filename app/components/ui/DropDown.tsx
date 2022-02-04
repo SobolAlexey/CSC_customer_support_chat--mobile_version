@@ -4,17 +4,15 @@ import styled from "styled-components/native";
 
 const DropDownContainer = styled.View`
   width: 100%;
-  margin: 0 auto;
 `;
 
 const DropDownHeader = styled.TouchableOpacity`
   margin-bottom: 0.8em;
-  padding: 0.4em 2em 0.4em 1em;
+  padding: 0.7em 3em 0.7em 5px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   background: #ffffff;
 `;
 
-const DropDownListContainer = styled.View``;
 
 const DropDownList = styled.View`
   padding: 0;
@@ -23,9 +21,6 @@ const DropDownList = styled.View`
   background: #ffffff;
   border: 2px solid #e5e5e5;
   box-sizing: border-box;
-  &:first-child {
-    padding-top: 0.8em;
-  }
 `;
 
 const ListItem = styled.TouchableOpacity`
@@ -47,7 +42,6 @@ const DropDown: FC<IDropDown> = ({ options, nameDropDown }) => {
   const onOptionClicked = (value: any) => () => {
     setSelectedOption(value);
     setIsOpen(false);
-    console.log(selectedOption);
   };
 
   return (
@@ -56,7 +50,7 @@ const DropDown: FC<IDropDown> = ({ options, nameDropDown }) => {
         <Text>{selectedOption || `${nameDropDown} ▼`}</Text>
       </DropDownHeader>
       {isOpen && (
-        <DropDownListContainer>
+       
           <DropDownList>
             {options.map((option) => (
               <ListItem onPress={onOptionClicked(option)} key={Math.random()}>
@@ -64,7 +58,7 @@ const DropDown: FC<IDropDown> = ({ options, nameDropDown }) => {
               </ListItem>
             ))}
           </DropDownList>
-        </DropDownListContainer>
+    
       )}
     </DropDownContainer>
   );
