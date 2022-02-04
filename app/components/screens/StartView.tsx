@@ -23,7 +23,7 @@ const ViewMain = styled.View`
 
 const StartView: FC = () => {
   const [name, setName] = useState<string>("");
-  const options = ["Mangoes", "Apples", "Oranges"];
+  const options = ["Mangoes", "Apples", "Oranges", "Mangoes", "Apples", "Oranges"];
   const startDialogHandler = async () => {};
   return (
     <ViewMain>
