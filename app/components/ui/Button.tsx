@@ -7,21 +7,24 @@ interface IButton {
   title: string;
 }
 
-const TouchableHighlightStyle = styled.TouchableHighlight`
-  display: flex;
+const TouchableHighlightStyle = styled.TouchableOpacity`
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 50px;
+  padding: 20px;
   background: rgb(0, 122, 255);
 `;
 
-const TextButton = styled.Text``;
+const TextButton = styled.Text`
+  color: #ffffff;
+`;
 
 const Button: FC<IButton> = ({ onPress, title }) => {
   return (
-    <TouchableHighlightStyle onPress={onPress}>
-      <Text>{title}</Text>
+    <TouchableHighlightStyle
+      activeOpacity={0.6}
+      onPress={onPress}
+    >
+      <TextButton>{title}</TextButton>
     </TouchableHighlightStyle>
   );
 };
